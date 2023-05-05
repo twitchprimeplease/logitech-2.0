@@ -1,0 +1,508 @@
+#back {
+    background-color: var(--neutral-color-one);
+    padding: 12px 18px 12px 18px;
+    border-width: 2px;
+}
+
+#forward {
+    background-color: var(--neutral-color-one);
+    padding: 12px 18px 12px 18px;
+    border-width: 2px;
+}
+
+#products-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 58px;
+    margin:36px;
+}
+
+
+
+
+
+/* Estilos cata*/
+
+@media (min-width: 769px){
+.container-principal{
+  margin-bottom: 120px;
+  display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 155px;
+}
+#comments-container {
+    margin-top: 20px;
+    gap:0px;
+  }
+  
+  #comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 0px;
+    
+    width: 429px;
+    height: auto;
+
+  }
+  
+  #comment-input {
+    width: 100%;
+    height: 100px;
+    resize: none;
+  }
+  
+  #comment-form button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color:#5759AE;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    
+  }
+  
+  #comment-form button:hover {
+    background-color: #303162;
+  }
+
+  .escribe-tu-comentario{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 42px;
+    
+  }
+
+  .profileone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+
+  }
+
+.comment-tittle{
+
+color:#5759AE;
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding-top: 20px;
+gap: 16px;
+
+width: 449px;
+margin-bottom: 13px;
+height: fit-content;
+}
+
+.comment-opinion{
+  padding-top: 18px;
+}
+
+.input{
+margin-left: -1.2%;
+}
+
+.envio{
+  color: #5759AE;
+}
+
+
+  .comment-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+   
+    
+  }
+
+  
+
+  .comment {
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 20px 13px;
+gap: 0px;
+
+
+
+background: #FFFFFF;
+border-radius: 7px;
+margin-bottom: 20px;
+    
+  }
+  
+  
+  .comment .text {
+    margin-top: 5px;
+    
+  }
+
+  comments-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+  }
+
+
+.textco{
+  margin-top: -11px;
+}
+
+#comment-box{
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.comment-tittletwo{
+  font-family: 'BR Firma';
+font-style: normal;
+font-weight: 400;
+  color:#a4a4ca;
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding-top: 2;
+gap: 16px;
+margin-left: -1%;
+width: 449px;
+margin-top: -10%;
+height: fit-content;
+}
+
+#delete-comment button{
+  margin-top: 20px;
+    padding: 5px 10px;
+    background-color: #5759AE;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos cata */
+
+#comments-container {
+    margin-top: 20px;
+  }
+  
+  #comment-form {
+    margin-top: 20px;
+  }
+  
+  #comment-input {
+    width: 100%;
+    height: 100px;
+    resize: none;
+  }
+  
+  #comment-form button {
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: #5759AE;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  #comment-form button:hover {
+    background-color: #303162;
+  }
+
+  #name-input{
+border-radius: 3px;
+border-color: #30316222;
+
+  }
+
+  #comment-input{
+    border-radius: 3px;
+border-color: #30316222;
+  }
+
+}
+
+@media (max-width: 416px) {
+  /*MOVILES*/
+  
+  .container-principal{
+    margin-bottom: 120px;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 155px;
+  }
+  #comments-container {
+      margin-top: 20px;
+      gap:0px;
+    }
+    
+    #comment-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 0px;
+      gap: 0px;
+      
+      width: 429px;
+      height: auto;
+  
+    }
+    
+    #comment-input {
+      width: 100%;
+      height: 100px;
+      resize: none;
+    }
+    
+    #comment-form button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color:#5759AE;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      
+    }
+    
+    #comment-form button:hover {
+      background-color: #303162;
+    }
+  
+    .escribe-tu-comentario{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+      gap: 42px;
+      
+    }
+  
+    .profileone{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 30px;
+      margin-left: 15%;
+  
+    }
+  
+  .comment-tittle{
+  
+  color:#5759AE;
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 3%;
+  gap: 16px;
+  
+  width: 449px;
+  margin-bottom: 13px;
+  height: fit-content;
+  margin-left: 15%;
+  }
+  
+.comment-nameop{
+  margin-left: 15%;
+}
+
+.comment-box-two{
+  margin-left:15%;
+}
+  .comment-opinion{
+    padding-top: 18px;
+  }
+  
+  .input{
+  margin-left: -1.2%;
+  }
+  
+  .envio{
+    margin-left: 15%;
+    color: #5759AE;
+  }
+  
+  
+    .comment-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+     
+      
+    }
+  
+    
+  
+    .comment {
+      display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 13px;
+  gap: 10px;
+  font-size: 22px;
+  
+  background: #FFFFFF;
+  border-radius: 7px;
+  margin-bottom: 20px;
+      
+    }
+    
+    
+    .comment .text {
+      margin-top: 5px;
+      
+    }
+  
+    comments-component{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10%;
+    }
+  
+  
+  .textco{
+    margin-top: -11px;
+    font-size:small;
+  }
+  
+  #comment-box{
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .comment-tittletwo{
+    font-family: 'BR Firma';
+  font-style: normal;
+  font-weight: 400;
+    color:#a4a4ca;
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 2;
+  gap: 16px;
+  margin-left: 28%;
+  width: 449px;
+  margin-top: -38%;
+  height: fit-content;
+  }
+  
+  #delete-comment button{
+    margin-top: 20px;
+      padding: 5px 10px;
+      background-color: #5759AE;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Estilos cata */
+  
+  #comments-container {
+      margin-top: 20px;
+    }
+    
+    #comment-form {
+      margin-top: 20px;
+    }
+    
+    #comment-input {
+      width: 100%;
+      height: 100px;
+      resize: none;
+    }
+    
+    #comment-form button {
+      margin-top: 20px;
+      padding: 5px 10px;
+      background-color: #5759AE;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    #comment-form button:hover {
+      background-color: #303162;
+    }
+  
+    #name-input{
+  border-radius: 3px;
+  border-color: #30316222;
+  
+    }
+  
+    #comment-input{
+      width:300px;
+      border-radius: 3px;
+  border-color: #30316222;
+    }
+  
+  }
+
+
+

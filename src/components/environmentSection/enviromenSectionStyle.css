@@ -1,0 +1,115 @@
+
+#enviroment-section-container{
+    margin-left:120px;
+    margin-right:120px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: top;
+    justify-content: space-around;
+
+}
+
+
+#enviroment-section-container .headline{
+    font-size: 1.4rem;
+    margin: 12px 0px;
+}
+
+#enviroment-section-container .card img{
+    align-self: center;
+    object-fit: cover;
+    width: 150%;
+}
+
+#enviroment-section-container .card{
+    overflow: hidden;
+    display: flex;
+    width: 22rem !important;
+    background-color: none;
+}
+
+#enviroment-section-container .card:hover{
+    background-color: var(--main-bg-color-black);
+    color: var(--neutral-color-two-900);
+}
+
+#enviroment-section-container .card-img-container{
+    width: 100%;
+    max-height: 160px;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* #enviroment-section-container .card-txt{
+    height: 40%;
+}
+ */
+#enviroment-section-container .btn{
+    max-width: 150px;
+    margin: 16px;
+    border-width: 1px;
+    border-color: var(--main-bg-color-black)
+}
+
+#enviroment-section-container .btn:hover{
+    background-color: var(--main-bg-color-black);
+    color: var(--neutral-color-two-900);
+    border-width: 1px;
+    border-color: var(--neutral-color-two-900)
+}
+
+#title-enviroment{
+    text-align: center;
+    margin: 60px
+
+}
+@media(min-width:768px) {
+    #enviroment-section-mobile{
+        display: none;
+    }
+}
+
+@media(max-width: 768px){
+
+    #enviroment-section-container{
+        display: flex;
+        align-items: top;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 24px;
+        padding: 24px;
+        margin:0px;
+        justify-content: center;
+    }
+
+    #enviroment-section-container .card{
+        overflow: hidden;
+        display: flex;
+        width: 100% !important;
+        align-items: center;
+        background-color: none;
+    }
+
+    #title-enviroment{
+        width: 100%;
+        padding:24px;
+        margin: 0px;
+        margin-top: 32px;
+    }
+
+    #title-enviroment .title-1{
+        font-size: 2rem;
+    }
+
+    #enviroment-section-container .btn {
+        max-width: 150px;
+        margin: 16px;
+        border-width: 1px;
+        border-color: var(--main-bg-color-black);
+    }
+
+}
+
+

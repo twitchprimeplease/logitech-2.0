@@ -1,0 +1,50 @@
+.navbar {
+    background-color: var(--neutral-color-two-900)!important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2% 4% 2% 4%;
+}
+
+.navbar-brand img {
+    width: 120px;
+    height: auto;
+}
+
+.nav-link {
+    align-items: center;
+    color: var(--main-bg-color-black);
+    margin: 0 15px;
+}
+
+.nav-link:hover {
+    color: var(--secundary-color-aquamarine);
+}
+
+#btn-nav {
+    background-color: var(--main-bg-color-black);
+    color: var(--neutral-color-two-900);
+    max-width: 200px;
+    padding: 12px 18px;
+}
+
+#btn-nav:hover {
+    background-color: var(--neutral-color-two-900);
+    color: var(--main-bg-color-black);
+    max-width: 200px;
+    border-width: 2px;
+    padding: 12px 18px;
+}
+
+#btn-prin {
+    background-color: var(--secundary-color-blue);
+    max-width: 200px;
+    padding: 16px 24px;
+}
+
+#btn-prin:hover {
+    background-color: var(--neutral-color-two-900);
+    color: var(--main-bg-color-black);
+    max-width: 200px;
+    padding: 16px 24px;
+}
