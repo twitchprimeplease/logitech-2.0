@@ -1,3 +1,4 @@
+import './styles.css';
 class filterComponent extends HTMLElement{
     constructor (){
         super();

@@ -1,3 +1,4 @@
+import './logiHeaderStyles.css';
 class logiHeader extends HTMLElement {
     constructor() {
         super();
@@ -6,11 +7,11 @@ class logiHeader extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <!-- <link rel="stylesheet" href="/src/Components/header/logiHeaderStyles.css"> -->
+        <!-- <link rel="stylesheet" href="/Components/header/logiHeaderStyles.css"> -->
             <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img src="/src/images/natha-img/logitech-logo.png" alt=""></a>
+                    <a class="navbar-brand" href="#"><img src="/images/natha-img/logitech-logo.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

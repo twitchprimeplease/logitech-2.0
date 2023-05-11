@@ -10,21 +10,21 @@ body {
 
 @font-face {
     font-family: 'BR-Firma';
-    src: url('./src/fonts/BR-Firma-Medium.otf') format('truetype');
+    src: url('./fonts/BR-Firma-Medium.otf') format('truetype');
     font-style: medium;
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'BR-Firma';
-    src: url('./src/fonts/BR-Firma-Bold.otf') format('truetype');
+    src: url('./fonts/BR-Firma-Bold.otf') format('truetype');
     font-style: bold;
     font-weight: bold;
 }
 
 @font-face {
     font-family: 'BR-Firma';
-    src: url('./src/fonts/BR-Firma-Regular.otf') format('truetype');
+    src: url('./fonts/BR-Firma-Regular.otf') format('truetype');
     font-style: regular;
     font-weight: 300;
 }

@@ -1,3 +1,4 @@
+import './styles.css';
 class galleryMasterSeries extends HTMLElement{
     constructor(){
         super();
@@ -6,27 +7,27 @@ class galleryMasterSeries extends HTMLElement{
 
     render(){
         this.innerHTML = `
-        <!-- <link rel="stylesheet" href="/src/Components/galleryMasterSeries/styles.css"> -->
+        <!-- <link rel="stylesheet" href="/Components/galleryMasterSeries/styles.css"> -->
         <section class="master-series-section">
             <article class="master-series-gallery">
                 <figure class="gallery-img-1">
-                    <img src="src/images/Mel/mx-keys-mini-top-mac-us.webp" alt="">
+                    <img src="images/Mel/mx-keys-mini-top-mac-us.webp" alt="">
                 </figure>
 
                 <figure class="gallery-img-2">
-                    <img src="src/images/Mel/mx-anywhere-3-for-mac-product-gallery-pale-gray-top.webp" alt="">
+                    <img src="images/Mel/mx-anywhere-3-for-mac-product-gallery-pale-gray-top.webp" alt="">
                 </figure>
 
                 <figure class="gallery-img-3">
-                    <img src="src/images/Mel/mx-master-3s-for-mac-mouse-top-view-pale-grey.webp" alt="">
+                    <img src="images/Mel/mx-master-3s-for-mac-mouse-top-view-pale-grey.webp" alt="">
                 </figure>
 
                 <figure class="gallery-img-4">
-                    <img src="src/images/Mel/mx-master-3s-mouse-top-view-black.webp" alt="">
+                    <img src="images/Mel/mx-master-3s-mouse-top-view-black.webp" alt="">
                 </figure>
 
                 <figure class="gallery-img-5">
-                    <img src="src/images/Mel/mx-anywhere-3-product-gallery-rose-rear.webp" alt="">
+                    <img src="images/Mel/mx-anywhere-3-product-gallery-rose-rear.webp" alt="">
                 </figure>
             </article>
             <aside class="gallery-aside">

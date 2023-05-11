@@ -1,6 +1,5 @@
+import './style.css';
 class CommentsComponent extends HTMLElement {
-    
-  
   constructor() {
     const IMG_PATH = "/src/images/cata ima/perfilf.png";
      super();
@@ -40,7 +39,7 @@ class CommentsComponent extends HTMLElement {
 
 <div class"escribe-tu-comentario">
 <div class="profileone">
-<img src="/src/images/cata ima/perfilf.png" width="20%">
+<img src="/images/cata ima/perfilf.png" width="20%">
         </div> 
 <div class="comment-tittle headline ">
 <p>Write your comment</p>
@@ -107,7 +106,7 @@ class CommentsComponent extends HTMLElement {
         commentElement.classList.add('comment-container');
         const profileName = document.createElement('div');
         profileName.classList.add('profileone');
-        profileName.innerHTML = `<img src="/src/images/cata ima/perfilf.png" width="70%" >`
+        profileName.innerHTML = `<img src="/images/cata ima/perfilf.png" width="70%" >`
         commentElement.appendChild(profileName);
         const headerElement = document.createElement('div');
         headerElement.classList.add('comment');
@@ -172,7 +171,7 @@ class CommentsComponent extends HTMLElement {
 
         <div class"escribe-tu-comentario">
         <div class="profileone">
-        <img src="/src/images/cata ima/perfilf.png" width="20%">
+        <img src="/images/cata ima/perfilf.png" width="20%">
                 </div> 
         <div class="comment-tittle headline ">
         <p>Escribe tu comentario</p>
@@ -239,7 +238,7 @@ class CommentsComponent extends HTMLElement {
                     commentElement.appendChild(headerElement);
                     
                     const imgElement = document.createElement('img');
-                    imgElement.src = '/src/images/cata ima/perfilf.png';
+                    imgElement.src = '/images/cata ima/perfilf.png';
                     commentElement.appendChild(imgElement);
       
                     commentElement.textContent = commentText;
@@ -268,7 +267,7 @@ class CommentsComponent extends HTMLElement {
       <div id="comments-list">
         <div class="comment-container">
         <div class="profileone">
-            <img src= "/src/images/cata ima/perfilo.png"width="15%>
+            <img src= "/images/cata ima/perfilo.png"width="15%>
             </div>
             <div class ="container-info-comm">
           <div class="comment headline" data-author="Juan">
@@ -280,7 +279,7 @@ class CommentsComponent extends HTMLElement {
           <div id="comments-list">
           <div class="comment-container">
           <div class="profileone">
-              <img src= "/src/images/cata ima/perfilt.png" width="15%>
+              <img src= "/images/cata ima/perfilt.png" width="15%>
               </div>
               <div class ="container-info-comm">
             <div class="comment headline" data-author="María">
@@ -294,7 +293,7 @@ class CommentsComponent extends HTMLElement {
             <div id="comments-list">
             <div class="comment-container">
             <div class="profileone">
-                <img src= "/src/images/cata ima/perfiltr.png" width="15%>
+                <img src= "/images/cata ima/perfiltr.png" width="15%>
                 </div>
                 <div class ="container-info-comm">
               <div class="comment headline" data-author="Pedro">

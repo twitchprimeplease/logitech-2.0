@@ -1,3 +1,4 @@
+import './style.css';
 class usercomment extends HTMLElement{
 constructor(){
     super();

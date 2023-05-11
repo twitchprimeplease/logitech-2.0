@@ -1,3 +1,4 @@
+import './style.css';
 class detailElement extends HTMLElement {
     constructor() {
         super();
@@ -94,11 +95,10 @@ class detailElement extends HTMLElement {
         if (this.image !== null && this.color !== null) {
             this.contador = this.images.length;
             this.body = `
-        // <link rel="stylesheet" href="/src/Components/detailElement/style.css">
             <article class="product">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-7">`;
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-7">`;
             for (let i = 0; i < this.images.length; i++) {
                 this.body += `
                         <img class="`+ (0) + `" id="img` + i + `" src= ${this.images[i]} alt="" `; if (i == 0) {

@@ -1,3 +1,4 @@
+import './logiFooterStyles.css';
 class logiFooter extends HTMLElement {
     constructor() {
         super();
@@ -6,11 +7,11 @@ class logiFooter extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <!-- <link rel="stylesheet" href="/src/Components/footer/logiFooterStyles.css"> -->
+        <!-- <link rel="stylesheet" href="/Components/footer/logiFooterStyles.css"> -->
             <div class="logi-footer">
                 <footer class="py-5">
                     <div  id="footer-logo">
-                        <img src="/src/images/Mel/logo-blanco.png">
+                        <img src="/images/Mel/logo-blanco.png">
                     </div>
                     <div class="row">
                         <div class="col-6 col-md-2 mb-3">

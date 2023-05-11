@@ -1,3 +1,4 @@
+import './enviromenSectionStyle.css';
 class environmentSection extends HTMLElement {
     constructor() {
         super();
@@ -15,7 +16,7 @@ class environmentSection extends HTMLElement {
             <div id="enviroment-section-container">
                 <div class="card" style="width: 18rem;">
                     <div class="card-img-container">
-                        <img src="/src/images/Mel/post-consumer-recycled-plastic-hero-banner-desktop-v2.webp" class="card-img-top" alt="...">
+                        <img src="/images/Mel/post-consumer-recycled-plastic-hero-banner-desktop-v2.webp" class="card-img-top" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title headline">NEXT LIFE PLASTICS</h5>
@@ -26,7 +27,7 @@ class environmentSection extends HTMLElement {
 
                 <div class="card" style="width: 18rem;">
                     <div class="card-img-container">
-                        <img src="/src/images/Mel/sustainability-hero-banner-desktop.webp" class="card-img-top" alt="...">
+                        <img src="/images/Mel/sustainability-hero-banner-desktop.webp" class="card-img-top" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title headline">FUTURE POSITIVE CHALLENGE</h5>
@@ -37,7 +38,7 @@ class environmentSection extends HTMLElement {
 
                 <div class="card" style="width: 18rem;">
                     <div class="card-img-container">
-                        <img src="/src/images/Mel/main-banner.webp" class="card-img-top" alt="...">
+                        <img src="/images/Mel/main-banner.webp" class="card-img-top" alt="...">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title headline">CLIMATE POSITIVE</h5>
