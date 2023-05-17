@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
 
@@ -20,6 +20,3 @@ export async function getProducts(){
     return allProducts;
 }
 
-export async function temporalAddProduct(){
-
-}
