@@ -1,3 +1,14 @@
+import { getProducts } from './firebase-config.js'
+
+let prove = [];
+
+await getDocs()
+
+async function getDocs() {
+    prove = await getProducts();
+
+}
+
 let product="";
 
   const txts=document.querySelector(".slide-text").children,
