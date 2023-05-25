@@ -13,7 +13,7 @@ export async function getProducts(){
     const allProducts = [];
     const querySnapshot = await getDocs(collection(db, "products"));
     querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
+
         allProducts.push({...doc.data(), id: doc.id});
     });
 
