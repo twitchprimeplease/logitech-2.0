@@ -1,18 +1,15 @@
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
+
 import { getFirestore, collection, getDocs, addDoc, doc, setDoc } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-// Your web app's Firebase configuration
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+
+
 const firebaseConfig = {
-    apiKey: "AIzaSyBBjfHI5zY2c4ZfdTJssZySaod68fcEjyQ",
-    authDomain: "logitech-21575.firebaseapp.com",
-    projectId: "logitech-21575",
-    storageBucket: "logitech-21575.appspot.com",
-    messagingSenderId: "649863524381",
-    appId: "1:649863524381:web:131deb7de632d8659416f4",
-    measurementId: "G-KFHS839YVJ"
+
 };
 
 // Initialize Firebase
@@ -142,3 +139,20 @@ export async function logInUser(userInfo) {
     }
 
 }
+
+
+    };
+
+
+
+export async function getProducts(){
+    const allProducts = [];
+    const querySnapshot = await getDocs(collection(db, "products"));
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        allProducts.push({...doc.data(), id: doc.id});
+    });
+
+    return allProducts;
+}
+
