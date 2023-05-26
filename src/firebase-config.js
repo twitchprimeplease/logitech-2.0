@@ -1,18 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, addDoc, doc, setDoc } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    /*apiKey: "AIzaSyBBjfHI5zY2c4ZfdTJssZySaod68fcEjyQ",
+    apiKey: "AIzaSyBBjfHI5zY2c4ZfdTJssZySaod68fcEjyQ",
     authDomain: "logitech-21575.firebaseapp.com",
     projectId: "logitech-21575",
     storageBucket: "logitech-21575.appspot.com",
     messagingSenderId: "649863524381",
     appId: "1:649863524381:web:131deb7de632d8659416f4",
-    measurementId: "G-KFHS839YVJ"*/
+    measurementId: "G-KFHS839YVJ"
 };
 
 // Initialize Firebase
@@ -117,4 +117,28 @@ export async function uploadFile(name, file, folder) {
     } catch (error) {
         console.log("error creando imagen ->", error);
     }
+}
+
+export async function logInUser(userInfo) {
+
+    try {
+        console.log(userInfo);
+        const userCredential = await signInWithEmailAndPassword(auth, userInfo.email, userInfo.pass)
+        .then((userCredential) => {
+            // Signed in"
+            console.log("Felicidades")
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+          });
+
+    }
+    catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(error.message)
+    }
+
 }
