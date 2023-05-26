@@ -1,4 +1,5 @@
 import './style.css';
+import { setCart } from '../../firebase-config.js';  
 class detailElement extends HTMLElement {
     constructor() {
         super();
@@ -13,6 +14,7 @@ class detailElement extends HTMLElement {
         this.body = "";
         this.contador = 0;
         this.current = 0;
+        this.array = [];
     }
 
     connectedCallback() {
@@ -74,8 +76,6 @@ class detailElement extends HTMLElement {
             }
         }
 
-        console.log(activeImage);
-
         if((pos+1) == 1 ){
             activeImage.setAttribute('style', 'display:none');
             images[count-1].setAttribute('style', 'display:block');
@@ -111,21 +111,25 @@ class detailElement extends HTMLElement {
             this.body += `
                     </div>
                     <div class="cont-arti col-md-5 align-items-center">
-                    <h5 class="product-type">${this.type}</h5>
-                    <div class = "product-info">
-                    <h3 class ="title-1 product-name">${this.name}</h4>
-                    <div class="product-description">
-                        <p class="txt-body">${this.description}</p>
+                        <h5 class="product-type">${this.type}</h5>
+                            <div class = "product-info">
+                                <h3 class ="title-1 product-name">${this.name}</h4>
+                                <div class="product-description">
+                                    <p class="txt-body">${this.description}</p>
+                                </div>
+                                <h4 class="headline price">$${this.price}</h4>
+                                </div>
+                                <button type="button" id="add-cart-btn" class="btn-primary button" href="/${this.name}">ADD TO CART</button>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="headline price">$${this.price}</h4>
-                </div>
-                <button type="button" id="add-cart-btn" class="btn-primary button" href="/${this.name}">ADD TO CART</button>
-                    </div>
-                </div>
-             </div>
-            </article>
-           `
-            this.innerHTML = this.body
+                </article>
+    `
+            this.innerHTML = this.body;
+
+            const addCartBtn = document.querySelector('#add-cart-btn');
+            addCartBtn.addEventListener('click', () => this.addToCart() );
+
         }
 
     }
@@ -135,6 +139,15 @@ class detailElement extends HTMLElement {
         this.images = images;
         console.log(this.images[0].img)
         this.innerHTML = '<div> <img src=' + this.images[0].img + ' alt=' + this.images[0].alt + ' /> </div>'
+    }
+
+    async addToCart() {
+        try {
+             await setCart('user-1',this.array);
+
+            } catch (e) {
+            console.log(e);
+                }
     }
 
 

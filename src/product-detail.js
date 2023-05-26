@@ -1,3 +1,5 @@
+import { getProducts } from './firebase-config.js'
+
 const productContainer = document.querySelector('detail-element');
 const commentsContainer=document.getElementById("comments-container");
 const searchFilter = document.querySelector('#category-filters');
@@ -18,8 +20,7 @@ let solicitude = searchParas.get("id").replace('"', "");
 
 async function getData(){
     try {
-    let response = await fetch('https://apimocha.com/json-logitech-s8/all-products');
-    let data = await response.json();
+    let data = await getProducts();
     organiceData(data);
     } catch (e) {
     console.log(e);
@@ -38,13 +39,14 @@ function organiceData(array){
         productObj.setAttribute('color', product.colors.join('$'));
         productObj.setAttribute('type', product.type);
         productObj.setAttribute('current', 0);
+        productObj.array = product;
         productContainer.append(productObj);
         
         const commentObj = document.createElement('comments-component');
         commentObj.commentArray=product;
         commentsContainer.append(commentObj);
     }
-    }); //alooo :c holiii
+    }); 
 
 //commentsContainer.innerHTML=`<comments-component> </comments-component>`
 
