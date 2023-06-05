@@ -6,13 +6,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBBjfHI5zY2c4ZfdTJssZySaod68fcEjyQ",
-    authDomain: "logitech-21575.firebaseapp.com",
-    projectId: "logitech-21575",
-    storageBucket: "logitech-21575.appspot.com",
-    messagingSenderId: "649863524381",
-    appId: "1:649863524381:web:131deb7de632d8659416f4",
-    measurementId: "G-KFHS839YVJ"
+
 };
 
 // Initialize Firebase
