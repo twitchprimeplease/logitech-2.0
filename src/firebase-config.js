@@ -2,12 +2,17 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { userValidation } from "./userValidation.js";
+// import { userValidation } from "./userValidation.js";
 import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-
+    apiKey: "AIzaSyBBNHs_UEKCTputSLoHZZXsL6wUjWPuJoA",
+    authDomain: "logitech-web-project.firebaseapp.com",
+    projectId: "logitech-web-project",
+    storageBucket: "logitech-web-project.appspot.com",
+    messagingSenderId: "99324536990",
+    appId: "1:99324536990:web:caee4958330bb57d6ab38f"
 };
 
 // Initialize Firebase
@@ -19,15 +24,15 @@ const auth = getAuth(app);
 // Storage
 const storage = getStorage(app);
 
-onAuthStateChanged(auth, (user) => {
-    console.log("hubo un cambio")
-    if (user) {
-        //const uid = user.uid;
-        userValidation(true)
-    } else {
-        userValidation(false)
-    }
-});
+// onAuthStateChanged(auth, (user) => {
+//     console.log("hubo un cambio")
+//     if (user) {
+//         //const uid = user.uid;
+//         userValidation(true)
+//     } else {
+//         userValidation(false)
+//     }
+// });
 
 export async function getTasks() {
 
@@ -125,19 +130,18 @@ export async function uploadFile(name, file, folder) {
 }
 
 export async function logInUser(userInfo) {
-
     try {
-        console.log(userInfo);
+        
         const userCredential = await signInWithEmailAndPassword(auth, userInfo.email, userInfo.pass)
         .then((userCredential) => {
             // Signed in"
             console.log("Felicidades")
             // ...
-          })
-          .catch((error) => {
+            })
+            .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-          });
+            });
 
     }
     catch (error) {
@@ -145,7 +149,6 @@ export async function logInUser(userInfo) {
         const errorMessage = error.message;
         alert(error.message)
     }
-
 }
 
 export function getCurrentUser(){
@@ -159,3 +162,13 @@ export function getCurrentUser(){
     }
     return result;
 }
+
+export async function setCart(username, product){
+    const userRef = doc(db, "shopping-cart", username);
+    await updateDoc(userRef, {
+        shoppingCart: arrayUnion(product),
+    });
+    console.log('whyyyy');
+    // const docRef = await addDoc(collection(db, "shopping-cart"), product);
+    // console.log("Document written with ID: ", docRef.id);
+    }
