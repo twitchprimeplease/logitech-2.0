@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2%;
+    padding: 1% 2% 1% 2%;
 }
 
 .navbar-brand img {
@@ -22,16 +22,43 @@
 }
 
 #btn-nav {
-    background-color: var(--main-bg-color-black);
-    color: var(--neutral-color-two-900);
-    max-width: 200px;
+    width: 10rem;
+    border: solid;
+    font-size: small;
     padding: 12px 18px;
+
 }
 
-#btn-nav:hover {
+.login-btn button {
+    background-color: var(--main-bg-color-black);
+    color: var(--neutral-color-two-900);
+    border-color: var(--neutral-color-two-900);
+    border-width: 0px;
+}
+
+.create-btn button {
+    color: var(--main-bg-color-black);
+    border-color: var(--main-bg-color-black);
+    border-width: 0px;
+}
+
+.login-btn button :hover {
     background-color: var(--neutral-color-two-900);
     color: var(--main-bg-color-black);
-    max-width: 200px;
-    border-width: 2px;
-    padding: 12px 18px;
+    border-width: 0px;
+}
+
+.create-btn button :hover {
+    color: var(--main-bg-color-black);
+    border-color: var(--main-bg-color-black);
+    border-width: 1em;
+}
+
+@media(max-width:792px) {
+    #btn-nav {
+        width: 7rem;
+        font-size: small;
+        padding: 12px 18px;
+    }
+
 }

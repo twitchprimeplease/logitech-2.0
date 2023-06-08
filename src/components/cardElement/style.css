@@ -16,6 +16,7 @@
 
 .product .btn-primary:hover{
     background-color: var(--secundary-color-blue);
+
 }
 
 .product-info{
@@ -25,7 +26,6 @@
     padding: 31px 24px 22px;
     gap: 10px;
 }
-
 .product button{
     padding: 8px 16px;
     border-radius: 5px;
@@ -44,9 +44,11 @@
     max-width: 262px;
 }
 
-.product-card-name{
+.product-name{
+    font-size: 18px;
     height: 50px; 
     display: flex;
+
 }
 
 .type-container{
@@ -58,6 +60,10 @@
     border-radius: 4px;
     max-width: 200px;
 
+}
+
+.type-container:hover{
+    color:var(--main-bg-color-black)
 }
 
 .image-container {

@@ -27,6 +27,7 @@ class cardElement extends HTMLElement {
         let reference = this.name.replaceAll(" ", "-");
         let url = "../product-detail/index.html?id=" + reference;
         this.innerHTML = `
+        <!-- <link rel="stylesheet" href="/src/Components/cardElement/style.css"> -->
             <article class="product">
                 <div class="image-container">
                         <img class= "product-img" src= ${this.image} alt="">
@@ -35,7 +36,7 @@ class cardElement extends HTMLElement {
                     <h5 class="product-type">${this.type}</h5>
                 </div>
                 <div class = "product-info">
-                    <h3 class ="product-card-name headline">${this.name}</h4>
+                    <h3 class ="product-name">${this.name}</h4>
                     <div class="product-description">
                         <p>${this.description}</p>
                     </div>

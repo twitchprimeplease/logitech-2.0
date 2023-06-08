@@ -1,19 +1,14 @@
-
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, collection, getDocs, addDoc, doc, setDoc } from "firebase/firestore";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
-import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, arrayUnion, arrayRemove, setDoc } from "firebase/firestore";
+import { userValidation } from "./userValidation.js";
 
-
-
+// Your web app's Firebase configuration
 const firebaseConfig = {
 
-
 };
-
-    };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -23,6 +18,16 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 // Storage
 const storage = getStorage(app);
+
+onAuthStateChanged(auth, (user) => {
+    console.log("hubo un cambio")
+    if (user) {
+        //const uid = user.uid;
+        userValidation(true)
+    } else {
+        userValidation(false)
+    }
+});
 
 export async function getTasks() {
 
@@ -60,7 +65,8 @@ export async function addUserToDb(userInfo, id) {
 }
 
 export async function editDocument(title, id) {
-  
+
+    // Add a new document in collection "cities"
     await setDoc(doc(db, "usuarios", id), {
         title: title,
         completed: true,
@@ -141,28 +147,3 @@ export async function logInUser(userInfo) {
     }
 
 }
-
-
-    };
-
-
-
-export async function getProducts(){
-    const allProducts = [];
-    const querySnapshot = await getDocs(collection(db, "products"));
-    querySnapshot.forEach((doc) => {
-
-        allProducts.push({...doc.data(), id: doc.id});
-    });
-
-    return allProducts;
-}
-
-export async function setCart(username, product){
-    const userRef = doc(db, "shopping-cart", username);
-    await updateDoc(userRef, {
-        shoppingCart: arrayUnion(product),
-    });
-    // const docRef = await addDoc(collection(db, "shopping-cart"), product);
-    // console.log("Document written with ID: ", docRef.id);
-    }
