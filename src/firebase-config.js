@@ -1,12 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, addDoc, doc, setDoc } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { userValidation } from "./userValidation.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-
+    apiKey: "AIzaSyBBNHs_UEKCTputSLoHZZXsL6wUjWPuJoA",
+    authDomain: "logitech-web-project.firebaseapp.com",
+    projectId: "logitech-web-project",
+    storageBucket: "logitech-web-project.appspot.com",
+    messagingSenderId: "99324536990",
+    appId: "1:99324536990:web:caee4958330bb57d6ab38f"
 };
 
 // Initialize Firebase
@@ -17,6 +23,16 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 // Storage
 const storage = getStorage(app);
+
+onAuthStateChanged(auth, (user) => {
+    console.log("hubo un cambio")
+    if (user) {
+        //const uid = user.uid;
+        userValidation(true)
+    } else {
+        userValidation(false)
+    }
+});
 
 export async function getTasks() {
 
