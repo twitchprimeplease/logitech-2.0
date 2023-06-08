@@ -1,10 +1,114 @@
-#sign-up-form {
+.wrapper {
+    background: white;
+    padding: 0 20px 0 20px
+  }
+
+  .main {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    min-height: 100vh;
+  }
 
-#sign-up-form label {
-    margin-top: 16px;
-}
+  .row {
+    width: 1000px;
+    height: 600px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 5px 5px 10px 1px #C7B4B4;
+  }
+
+  .side-image {
+    background-image: url(../images/natha-img/sign-up.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+  }
+
+  img {
+    width: 80px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .input-box {
+    width: 330px;
+    box-sizing: border-box;
+  }
+  
+  .input-box header {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .input-box p {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 10px 0 10px;
+  }
+  
+  input {
+    height: 30px;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 20px;
+    color: #2D332F;
+  }
+  
+  .input-box .input-field label {
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #2D332F;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    height: 45px;
+    background: #2D332F;
+    color: #E5E9EB;
+    transition: .4s;
+  }
+  
+  .submit:hover {
+    background: transparent;
+    border: 3px solid #2D332F;
+    color: #2D332F;
+  }
+  
+  .signup {
+    text-align: center;
+    font-size: small;
+    margin-top: 25px;
+  }
+  
+  .txt-acc .crt-acc {
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    transition: .5s;
+  }
+  
+  .txt-acc .crt-acc:hover {
+    text-decoration: underline;
+    color: black;
+  }

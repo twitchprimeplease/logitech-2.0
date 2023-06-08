@@ -49,9 +49,9 @@
 }
 
 .create-btn button :hover {
-    color: var(--main-bg-color-black);
-    border-color: var(--main-bg-color-black);
-    border-width: 1em;
+    background: transparent;
+    border: 3px solid #2D332F;
+    color: #2D332F;
 }
 
 @media(max-width:792px) {
