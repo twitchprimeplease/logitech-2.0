@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc, doc, setDoc } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-
+// import { userValidation } from "./userValidation.js";
+import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -23,6 +23,16 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 // Storage
 const storage = getStorage(app);
+
+// onAuthStateChanged(auth, (user) => {
+//     console.log("hubo un cambio")
+//     if (user) {
+//         //const uid = user.uid;
+//         userValidation(true)
+//     } else {
+//         userValidation(false)
+//     }
+// });
 
 export async function getTasks() {
 
@@ -120,19 +130,18 @@ export async function uploadFile(name, file, folder) {
 }
 
 export async function logInUser(userInfo) {
-
     try {
-        console.log(userInfo);
+        
         const userCredential = await signInWithEmailAndPassword(auth, userInfo.email, userInfo.pass)
         .then((userCredential) => {
             // Signed in"
             console.log("Felicidades")
             // ...
-          })
-          .catch((error) => {
+            })
+            .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-          });
+            });
 
     }
     catch (error) {
@@ -140,7 +149,6 @@ export async function logInUser(userInfo) {
         const errorMessage = error.message;
         alert(error.message)
     }
-
 }
 
 export async function logOut() {
@@ -153,3 +161,24 @@ export async function logOut() {
     };
 
 }
+export function getCurrentUser(){
+    const auth = getAuth();
+    const user = auth.currentUser;
+    let result;
+    if (user) {
+        result = user;
+    } else {
+        result = 'local'
+    }
+    return result;
+}
+
+export async function setCart(username, product){
+    const userRef = doc(db, "shopping-cart", username);
+    await updateDoc(userRef, {
+        shoppingCart: arrayUnion(product),
+    });
+    console.log('whyyyy');
+    // const docRef = await addDoc(collection(db, "shopping-cart"), product);
+    // console.log("Document written with ID: ", docRef.id);
+    }

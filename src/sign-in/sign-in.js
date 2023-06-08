@@ -1,5 +1,5 @@
 
-import { logInUser } from '../firebase-config.js';
+import { getCurrentUser, logInUser } from '../firebase-config.js';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
@@ -20,10 +20,9 @@ const auth = getAuth();
             userInfo[elem.name] = elem.files[0]
         } else if(elem.value && elem.value.length > 0){
             userInfo[elem.name] = elem.value
-        } /*else {
-            alert('No todos los valores estan diligenciados')
-        }*/
+        } 
     })
-    console.log(userInfo)
-    logInUser(userInfo)
+    console.log(userInfo);
+    logInUser(userInfo);
+    window.location.assign('../index.html')
     }
