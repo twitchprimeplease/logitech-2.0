@@ -25,7 +25,7 @@ class cardElement extends HTMLElement {
 
     render(){
         let reference = this.name.replaceAll(" ", "-");
-        let url = "/src/product-detail/index.html?id=" + reference;
+        let url = "../product-detail/index.html?id=" + reference;
         this.innerHTML = `
         <!-- <link rel="stylesheet" href="/src/Components/cardElement/style.css"> -->
             <article class="product">
