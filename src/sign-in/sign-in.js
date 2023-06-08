@@ -1,12 +1,17 @@
 
-import { getCurrentUser, logInUser } from '../firebase-config.js';
+import { getCurrentUser, logInUser, getCart } from '../firebase-config.js';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
+// let shoppingCartContainer = querySelector('#shopping-card-container');
+// let priceContainer = querySelector('#price-container');
+
+let currentUser;
+let currentUserUID;
 
 const inputElements = document.querySelector('#sign-in-form').querySelectorAll('input')
-console.log(inputElements)
-const formButton = document.getElementById('log-button')
-formButton.addEventListener('click', (e)=> signIn(e))
+console.log(inputElements);
+const formButton = document.getElementById('log-button');
+formButton.addEventListener('click', (e)=> signIn(e));
 
 const auth = getAuth();
 
@@ -24,5 +29,7 @@ const auth = getAuth();
     })
     console.log(userInfo);
     logInUser(userInfo);
-    window.location.assign('../index.html')
+    currentUser = getCurrentUser();
+    console.log(currentUser, currentUser.uid);
+    // window.location.assign('../index.html')
     }
