@@ -10,28 +10,28 @@ body {
 
 @font-face {
     font-family: 'BR-Firma';
-    src: url('/fonts/BR-Firma-Medium.otf') format('truetype');
+    src: url('./fonts/BR-Firma-Medium.otf') format('truetype');
     font-style: medium;
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'BR-Firma';
-    src: url('/fonts/BR-Firma-Bold.otf') format('truetype');
+    src: url('./fonts/BR-Firma-Bold.otf') format('truetype');
     font-style: bold;
     font-weight: bold;
 }
 
 @font-face {
     font-family: 'BR-Firma';
-    src: url('/fonts/BR-Firma-Regular.otf') format('truetype');
+    src: url('./fonts/BR-Firma-Regular.otf') format('truetype');
     font-style: regular;
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'BR-Firma';
-    src: url('/fonts/BR-Firma-Light.otf') format('truetype');
+    src: url('./src/fonts/BR-Firma-Light.otf') format('truetype');
     font-style: light;
     font-weight: 200;
 }
@@ -166,8 +166,21 @@ body {
 
 /* Estilos Nathalia */
 
+#btn-prin{
+    background-color: var(--secundary-color-blue);
+    max-width: 200px;
+    padding: 16px 24px;
+}
+
+#btn-prin:hover{
+    background-color: var(--neutral-color-two-900);
+    color: var(--main-bg-color-black);
+    max-width: 200px;
+    padding: 16px 24px;
+}
+
 .carou-item {
-    height: 580px;
+    height: 650px;
 }
 
 .carou-img {

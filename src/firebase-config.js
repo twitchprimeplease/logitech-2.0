@@ -1,35 +1,23 @@
-
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { userValidation } from "./userValidation.js";
 import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    };
 
+};
+
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+// Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
-
-export async function getProducts(){
-    const allProducts = [];
-    const querySnapshot = await getDocs(collection(db, "products"));
-    querySnapshot.forEach((doc) => {
-
-        allProducts.push({...doc.data(), id: doc.id});
-    });
-
-    return allProducts;
-}
-
-export async function setCart(username, product){
-    const userRef = doc(db, "shopping-cart", username);
-    await updateDoc(userRef, {
-        shoppingCart: arrayUnion(product),
-    });
-    // const docRef = await addDoc(collection(db, "shopping-cart"), product);
-    // console.log("Document written with ID: ", docRef.id);
-    }
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
+// Storage
+const storage = getStorage(app);
 
 onAuthStateChanged(auth, (user) => {
     console.log("hubo un cambio")
