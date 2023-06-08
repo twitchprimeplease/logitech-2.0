@@ -38,6 +38,7 @@ function organiceData(array){
         productObj.setAttribute('color', product.colors.join('$'));
         productObj.setAttribute('type', product.type);
         productObj.setAttribute('current', 0);
+        productObj.array = product;
         productContainer.append(productObj);
         
         const commentObj = document.createElement('comments-component');

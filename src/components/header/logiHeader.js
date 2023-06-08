@@ -1,4 +1,5 @@
-import '/components/header/styles.css'
+import './styles.css'
+import { getCurrentUser } from '../../firebase-config';
 class logiHeader extends HTMLElement {
     constructor() {
         super();
@@ -6,8 +7,8 @@ class logiHeader extends HTMLElement {
     }
 
     render() {
+        
         this.innerHTML = `
-        <link rel="stylesheet" href="/src/components/header/styles.css">
             <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -38,6 +39,18 @@ class logiHeader extends HTMLElement {
         </nav>
         </header>
         `;
+        let usuario = getCurrentUser();
+        if(usuario != 'local') {
+            console.log("ayuda");
+            this.innerHTML += `
+
+            `
+        } else if (usuario === 'local'){
+            this.innerHTML += `
+
+            `
+            console.log('LOCATE')
+        }
     }
 }
 
