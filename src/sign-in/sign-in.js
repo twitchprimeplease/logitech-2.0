@@ -1,4 +1,4 @@
-import { logInUser } from '../firebase-config.js';
+import { getCurrentUser, logInUser } from '../firebase-config.js';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const inputElements = document.querySelector('#sign-in-form').querySelectorAll('input')
@@ -25,3 +25,7 @@ const auth = getAuth();
     console.log(userInfo)
     logInUser(userInfo)
     }
+
+    const helpButton = document.getElementById('help')
+    helpButton.addEventListener('click', ()=> console.log(getCurrentUser()))
+    

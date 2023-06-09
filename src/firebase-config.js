@@ -21,7 +21,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
-// Storage
+// Storagess
 const storage = getStorage(app);
 
 // onAuthStateChanged(auth, (user) => {
@@ -185,11 +185,11 @@ export async function setCart(username, product){
     export async function getCart(username){
         const allProducts = []
 
-        const querySnapshot = await getDocs(collection(db, "shopping-cart", username));
+        const querySnapshot = await getDocs(collection(db, "shopping-cart"));
         querySnapshot.forEach((doc) => {
             allProducts.push({ ...doc.data(), id: doc.id })
         });
-
+        console.log(allProducts)
     return allProducts;
     }
 

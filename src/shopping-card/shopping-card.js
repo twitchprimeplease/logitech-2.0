@@ -3,23 +3,40 @@ import { getCurrentUser, getCart } from '../firebase-config';
 
 let shoppingCartContainer = document.querySelector('#shopping-card-container');
 
-let currentUserUID
+let currentUserUID = "uWqgp09J6hRV3yJ5EFfCz4xNlxZ2"
 let currentUser = getCurrentUser();
 if(currentUser =! 'local'){
     currentUserUID = currentUser.uid;
 }
 
-let carrito = getCart(currentUserUID);
+async function showCart(){
+    let carrito = await getCart("user-1");
+    let userCarrito = [];
 
-carrito.forEach(element => {
+    carrito.forEach(element => {
+        if (element.id === currentUserUID) {
+            userCarrito.push(element);
+        }
+    })
+    console.log(userCarrito)
+
+    let userFinal = userCarrito[0].shoppingCart
+
+    console.log(userFinal)
+
+userFinal.forEach(element => {
 
     const cardObj = document.createElement('shopping-card-element');
-    cardObj.setAttribute('name', product.name);
-    cardObj.setAttribute('price', product.price);
-    cardObj.setAttribute('image', product.url[0]);
-    cardObj.setAttribute('type', product.type);
-    
+    cardObj.setAttribute('name', element.name);
+    cardObj.setAttribute('price', element.price);
+    cardObj.setAttribute('image', element.url[0]);
+    cardObj.setAttribute('type', element.type);
+
     shoppingCartContainer.append(cardObj);
 });
+}
+showCart();
+
+
 
 
