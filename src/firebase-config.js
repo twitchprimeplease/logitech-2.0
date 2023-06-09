@@ -151,6 +151,16 @@ export async function logInUser(userInfo) {
     }
 }
 
+export async function logOut() {
+
+    try{
+    await signOut(auth)
+
+    } catch(error) {
+        console.error(error)
+    };
+
+}
 export function getCurrentUser(){
     const auth = getAuth();
     const user = auth.currentUser;
