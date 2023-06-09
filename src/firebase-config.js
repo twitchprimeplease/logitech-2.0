@@ -157,7 +157,6 @@ export async function logOut() {
 
 }
 export function getCurrentUser(){
-    const auth = getAuth();
     const user = auth.currentUser;
     let result;
     if (user) {
@@ -184,7 +183,6 @@ export async function setCart(username, product){
         querySnapshot.forEach((doc) => {
             allProducts.push({ ...doc.data(), id: doc.id })
         });
-        console.log(allProducts)
     return allProducts;
     }
 

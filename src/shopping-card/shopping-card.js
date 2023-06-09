@@ -1,43 +1,57 @@
 import './styles.css'
 import { getCurrentUser, getCart } from '../firebase-config';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
+const auth = getAuth();
 
 let shoppingCartContainer = document.querySelector('#shopping-card-container');
 
+let currentUserUID;
+let currentUser;
 
 
-let currentUserUID = "uWqgp09J6hRV3yJ5EFfCz4xNlxZ2"
-let currentUser = getCurrentUser();
 
-console.log(currentUser);
+onAuthStateChanged(auth, (user) => {
+
+    if (user) {
+        currentUser = user;
+        currentUserUID = user.uid;
+        console.log(currentUserUID);
+        showCart();
+    } else {
+        
+    }
+});
 
 async function showCart(){
-    let carrito = await getCart("user-1");
+    let carrito = await getCart();
     let userCarrito = [];
 
     carrito.forEach(element => {
         if (element.id === currentUserUID) {
-            userCarrito.push(element);
+            userCarrito = element.shoppingCart;
+            console.log(userCarrito);
         }
-    })
-    console.log(userCarrito)
+    });
 
-    let userFinal = userCarrito[0].shoppingCart
+    shoppingCartContainer.innerHTML = '';
 
-    console.log(userFinal)
+    if (userCarrito.length > 0) {
 
-userFinal.forEach(element => {
+        userCarrito.forEach(element => {
 
-    const cardObj = document.createElement('shopping-card-element');
-    cardObj.setAttribute('name', element.name);
-    cardObj.setAttribute('price', element.price);
-    cardObj.setAttribute('image', element.url[0]);
-    cardObj.setAttribute('type', element.type);
+            const cardObj = document.createElement('shopping-card-element');
+            cardObj.setAttribute('name', element.name);
+            cardObj.setAttribute('price', element.price);
+            cardObj.setAttribute('image', element.url[0]);
+            cardObj.setAttribute('type', element.type);
+        
+            shoppingCartContainer.append(cardObj);
+        });
+    } 
 
-    shoppingCartContainer.append(cardObj);
-});
 }
-showCart();
+
 
 
 
