@@ -39,7 +39,7 @@ class logiHeader extends HTMLElement {
         </nav>
         </header>
         `;
-        let usuario = getCurrentUser();
+        /*let usuario = getCurrentUser();
         if(usuario != 'local') {
             console.log("ayuda");
             this.innerHTML += `
@@ -50,7 +50,7 @@ class logiHeader extends HTMLElement {
 
             `
             console.log('LOCATE')
-        }
+        }*/
     }
 }
 
