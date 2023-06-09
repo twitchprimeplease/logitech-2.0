@@ -1,5 +1,5 @@
 import { getCurrentUser, logInUser } from '../firebase-config.js';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 const inputElements = document.querySelector('#sign-in-form').querySelectorAll('input')
 console.log(inputElements);
@@ -24,8 +24,14 @@ const auth = getAuth();
     })
     console.log(userInfo)
     logInUser(userInfo)
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            window.location.assign('../index.html')
+        } else {
+
+        }
+    });
     }
 
-    const helpButton = document.getElementById('help')
-    helpButton.addEventListener('click', ()=> console.log(getCurrentUser()))
+    
     
