@@ -1,0 +1,22 @@
+.shopping-card-element{
+    display:flex;
+    flex-direction: row;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    margin:0;
+}
+
+.shopping-card-element:hover{
+    background-color:var(--neutral-color-grey)
+}
+
+.shopping-card-img{
+    max-height: 190px;
+}
+
+.shopping-card-element .image-container{
+    overflow: hidden;
+    align-items: center;
+}
