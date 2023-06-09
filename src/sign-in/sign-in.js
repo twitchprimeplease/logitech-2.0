@@ -1,12 +1,5 @@
-
-import { getCurrentUser, logInUser, getCart } from '../firebase-config.js';
+import { logInUser } from '../firebase-config.js';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
-// let shoppingCartContainer = querySelector('#shopping-card-container');
-// let priceContainer = querySelector('#price-container');
-
-let currentUser;
-let currentUserUID;
 
 const inputElements = document.querySelector('#sign-in-form').querySelectorAll('input')
 console.log(inputElements);
@@ -25,11 +18,10 @@ const auth = getAuth();
             userInfo[elem.name] = elem.files[0]
         } else if(elem.value && elem.value.length > 0){
             userInfo[elem.name] = elem.value
-        } 
+        } /*else {
+            alert('No todos los valores estan diligenciados')
+        }*/
     })
-    console.log(userInfo);
-    logInUser(userInfo);
-    currentUser = getCurrentUser();
-    console.log(currentUser, currentUser.uid);
-    // window.location.assign('../index.html')
+    console.log(userInfo)
+    logInUser(userInfo)
     }
