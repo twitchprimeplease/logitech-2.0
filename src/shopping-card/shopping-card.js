@@ -9,8 +9,6 @@ let shoppingCartContainer = document.querySelector('#shopping-card-container');
 let currentUserUID;
 let currentUser;
 
-
-
 onAuthStateChanged(auth, (user) => {
 
     if (user) {
@@ -46,7 +44,7 @@ async function showCart(){
             cardObj.setAttribute('image', element.url[0]);
             cardObj.setAttribute('type', element.type);
         
-            shoppingCartContainer.append(cardObj);
+            shoppingCartContainer.appendChild(cardObj);
         });
     } 
 

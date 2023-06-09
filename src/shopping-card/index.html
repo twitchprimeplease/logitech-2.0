@@ -14,8 +14,14 @@
 <body class ="shopping-body">
     <logi-header></logi-header>
     <h1 class="title-1">Shopping Card</h1>
-    <article id="shopping-card-container"></article>
-
+    <article id="shopping-card-container">
+        <h1 id="nocart-state">You have not add any products to your shopping cart, yet!</h1>
+        <a href="../product-list/index.html">
+            <button class="btn-primary">Find something to add</button>
+        </a>
+        
+    </article>
+    <logi-footer></logi-footer>
     <script type ="module" src="../importWebComponents.js"></script>
     <script type="module" src="./shopping-card.js"></script>
 </body>
