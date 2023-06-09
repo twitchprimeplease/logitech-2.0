@@ -178,7 +178,7 @@ export async function setCart(username, product){
     await updateDoc(userRef, {
         shoppingCart: arrayUnion(product),
     });
-    console.log('whyyyy');
+
     // const docRef = await addDoc(collection(db, "shopping-cart"), product);
     // console.log("Document written with ID: ", docRef.id);
     }
