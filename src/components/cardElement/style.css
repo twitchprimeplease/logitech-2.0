@@ -44,7 +44,7 @@
     max-width: 262px;
 }
 
-.product-name{
+.product-card-name{
     font-size: 18px;
     height: 50px; 
     display: flex;
@@ -60,10 +60,6 @@
     border-radius: 4px;
     max-width: 200px;
 
-}
-
-.type-container:hover{
-    color:var(--main-bg-color-black)
 }
 
 .image-container {

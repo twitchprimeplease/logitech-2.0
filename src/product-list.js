@@ -1,3 +1,4 @@
+import { getProducts } from './firebase-config.js'
 let products = []
 
 const productContainer = document.querySelector('#products-container');
@@ -9,11 +10,7 @@ categoryButton.forEach(btn => btn.addEventListener('click', ()=> setCategory(btn
 
 async function getData(){
     try {
-    let response = await fetch('https://apimocha.com/json-logitech-s8/all-products');
-    let data = await response.json();
-    data.forEach(element => {
-        products.push(element)
-    });
+    products = await getProducts();
     iniciatePage(products)
 
     } catch (e) {

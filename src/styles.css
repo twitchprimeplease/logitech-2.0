@@ -166,8 +166,21 @@ body {
 
 /* Estilos Nathalia */
 
+#btn-prin{
+    background-color: var(--secundary-color-blue);
+    max-width: 200px;
+    padding: 16px 24px;
+}
+
+#btn-prin:hover{
+    background-color: var(--neutral-color-two-900);
+    color: var(--main-bg-color-black);
+    max-width: 200px;
+    padding: 16px 24px;
+}
+
 .carou-item {
-    height: 580px;
+    height: 650px;
 }
 
 .carou-img {
