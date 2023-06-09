@@ -1,13 +1,15 @@
 import './styles.css'
 import { getCurrentUser, getCart } from '../firebase-config';
+import { getAuth } from 'firebase/auth';
 
 let shoppingCartContainer = document.querySelector('#shopping-card-container');
 
+
+
 let currentUserUID = "uWqgp09J6hRV3yJ5EFfCz4xNlxZ2"
 let currentUser = getCurrentUser();
-if(currentUser =! 'local'){
-    currentUserUID = currentUser.uid;
-}
+
+console.log(currentUser);
 
 async function showCart(){
     let carrito = await getCart("user-1");

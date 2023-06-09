@@ -7,12 +7,7 @@ import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, arrayUnion, 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBBNHs_UEKCTputSLoHZZXsL6wUjWPuJoA",
-    authDomain: "logitech-web-project.firebaseapp.com",
-    projectId: "logitech-web-project",
-    storageBucket: "logitech-web-project.appspot.com",
-    messagingSenderId: "99324536990",
-    appId: "1:99324536990:web:caee4958330bb57d6ab38f" 
+
 };
 
 // Initialize Firebase
