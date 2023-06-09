@@ -36,7 +36,7 @@ class cardElement extends HTMLElement {
                     <h5 class="product-type">${this.type}</h5>
                 </div>
                 <div class = "product-info">
-                    <h3 class ="product-name">${this.name}</h4>
+                <h3 class ="product-card-name headline">${this.name}</h3>
                     <div class="product-description">
                         <p>${this.description}</p>
                     </div>

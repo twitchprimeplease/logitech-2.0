@@ -11,3 +11,4 @@ import './components/galleryMasterSeries/galleryMasterSeries.js';
 import './components/header/logiHeader.js';
 import './components/spotlightZoneVibe100/spotlightZoneVibe100.js';
 import './components/user-comment/user-comment.js';
+import './components/shoppingCardElement/shoppingCardElement.js'

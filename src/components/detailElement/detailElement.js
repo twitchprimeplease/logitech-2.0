@@ -140,7 +140,7 @@ class detailElement extends HTMLElement {
                         console.log(this.array);
                             }
                 } else if (user === 'local') {
-                    window.location.assign('../../index.html')
+                    window.location.assign('../../sign-in/index.html')
                 }
 
 
@@ -156,7 +156,6 @@ class detailElement extends HTMLElement {
         console.log(this.images[0].img)
         this.innerHTML = '<div> <img src=' + this.images[0].img + ' alt=' + this.images[0].alt + ' /> </div>'
     }
-
 
 }
 

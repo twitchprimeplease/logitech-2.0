@@ -45,44 +45,10 @@ function organiceData(array){
         commentObj.commentArray=product;
         commentsContainer.append(commentObj);
     }
-    }); //alooo :c holiii
+    });
 
-//commentsContainer.innerHTML=`<comments-component> </comments-component>`
 
 
 }
 
 getData()
-
-
-/*
-const commentsContenedor = document.getElementById("comments-container");
-
-
-/cataaa
-
-const commentsContainer = document.querySelector('#comments-container');
-const commentForm = document.querySelector('#comment-form');
-const commentInput = document.querySelector('#comment-input');
-
-commentForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const commentText = commentInput.value;
-  if (commentText.trim() === '') {
-    alert('Debes escribir un comentario');
-    return;
-  }
-  const commentElement = document.createElement('div');
-  commentElement.classList.add('comment');
-  commentElement.textContent = commentText;
-  commentsContainer.appendChild(commentElement);
-  commentInput.value = '';
-});
-
-commentsContainer.addEventListener('click', (event) => {
-  if (event.target.classList.contains('delete-comment')) {
-    event.target.parentElement.remove();
-  }
-}); 
-
-*/

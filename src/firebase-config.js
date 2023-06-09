@@ -12,7 +12,7 @@ const firebaseConfig = {
     projectId: "logitech-web-project",
     storageBucket: "logitech-web-project.appspot.com",
     messagingSenderId: "99324536990",
-    appId: "1:99324536990:web:caee4958330bb57d6ab38f"
+    appId: "1:99324536990:web:caee4958330bb57d6ab38f" 
 };
 
 // Initialize Firebase
@@ -178,7 +178,28 @@ export async function setCart(username, product){
     await updateDoc(userRef, {
         shoppingCart: arrayUnion(product),
     });
-    console.log('whyyyy');
     // const docRef = await addDoc(collection(db, "shopping-cart"), product);
     // console.log("Document written with ID: ", docRef.id);
+    }
+
+    export async function getCart(username){
+        const allProducts = []
+
+        const querySnapshot = await getDocs(collection(db, "shopping-cart", username));
+        querySnapshot.forEach((doc) => {
+            allProducts.push({ ...doc.data(), id: doc.id })
+        });
+
+    return allProducts;
+    }
+
+    export async function getProducts(){
+        const allProducts = [];
+        const querySnapshot = await getDocs(collection(db, "products"));
+        querySnapshot.forEach((doc) => {
+    
+            allProducts.push({...doc.data(), id: doc.id});
+        });
+    
+        return allProducts;
     }
