@@ -1,3 +1,5 @@
+import { getCurrentUser } from './firebase-config.js';
+
 let product="";
 
   const txts=document.querySelector(".slide-text").children,
@@ -57,3 +59,6 @@ let product="";
             el: ".swiper-pagination",
           }
         })
+
+        const helpButton = document.getElementById('help')
+    helpButton.addEventListener('click', ()=> console.log(getCurrentUser()))
