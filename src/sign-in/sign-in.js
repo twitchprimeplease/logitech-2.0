@@ -1,11 +1,10 @@
 import { getCurrentUser, logInUser } from '../firebase-config.js';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-
 const inputElements = document.querySelector('#sign-in-form').querySelectorAll('input')
-console.log(inputElements)
-const formButton = document.getElementById('log-button')
-formButton.addEventListener('click', (e)=> signIn(e))
+console.log(inputElements);
+const formButton = document.getElementById('log-button');
+formButton.addEventListener('click', (e)=> signIn(e));
 
 const auth = getAuth();
 
