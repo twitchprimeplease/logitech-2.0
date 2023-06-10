@@ -39,8 +39,10 @@ class logiHeader extends HTMLElement {
                     <a class="nav-link button" href="#">CONTACT</a>
                     </li>
                 </ul>
-                <a class="login-btn button" href="/sign-in/"> <button type="button" id="btn-nav" class="button">SIGN IN</button></a>
-                <a class="create-btn button" href="/sign-up/"> <button type="button" id="btn-nav" class="button">SIGN UP</button></a>
+                <div class="option-btn">
+                <a class="shop-btn" href="/shopping-card/"><img src="/images/natha-img/shopping-cart.png" alt=""></a>
+                <a class="user-btn" href="#"><img src="/images/natha-img/user.png" alt=""></a>
+                </div>
                 </div>
             </div>
             </nav>
