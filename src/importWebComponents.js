@@ -1,5 +1,4 @@
 /// Import here all of your customComponents
-import "./components/sectionExampleComponent/sectionExampleComponent.js";
 import './components/alternativeFilter/alternativeFilter.js';
 import './components/cardElement/cardElement.js';
 import './components/comments/comments.js';
