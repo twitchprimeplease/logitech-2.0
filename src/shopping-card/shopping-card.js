@@ -32,10 +32,8 @@ async function showCart(){
         }
     });
 
-    shoppingCartContainer.innerHTML = '';
-
     if (userCarrito.length > 0) {
-
+        shoppingCartContainer.innerHTML = '';
         userCarrito.forEach(element => {
 
             const cardObj = document.createElement('shopping-card-element');

@@ -1,3 +1,4 @@
+import { getProducts } from './firebase-config.js'
 const productContainer = document.querySelector('detail-element');
 const commentsContainer=document.getElementById("comments-container");
 const searchFilter = document.querySelector('#category-filters');
@@ -18,9 +19,8 @@ let solicitude = searchParas.get("id").replace('"', "");
 
 async function getData(){
     try {
-    let response = await fetch('https://apimocha.com/json-logitech-s8/all-products');
-    let data = await response.json();
-    organiceData(data);
+    let products = await getProducts();
+    organiceData(products);
     } catch (e) {
     console.log(e);
         }
