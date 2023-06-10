@@ -201,3 +201,11 @@ export async function setCart(username, product){
     
         return allProducts;
     }
+
+
+        export async function setComments(userId, productId,nameUser, comment ){
+            const userRef = doc(db, "products", productId);
+            await updateDoc(userRef, {
+                comments: arrayUnion({author: nameUser, profileone:"sin imagen",text: comment}),
+            });
+            }
