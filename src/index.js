@@ -59,6 +59,3 @@ let product="";
             el: ".swiper-pagination",
           }
         })
-
-        const helpButton = document.getElementById('help')
-    helpButton.addEventListener('click', ()=> console.log(getCurrentUser()))
