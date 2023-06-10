@@ -5,7 +5,8 @@
     align-items: center;
     justify-content: space-evenly;
     border-radius: 20px;
-    margin:0;
+    margin:0 auto;
+    width: 100%;
 }
 
 .shopping-card-element:hover{
@@ -19,4 +20,9 @@
 .shopping-card-element .image-container{
     overflow: hidden;
     align-items: center;
+    margin: 0 auto;
+}
+
+.shopping-card-name {
+    font-weight: 650;
 }
