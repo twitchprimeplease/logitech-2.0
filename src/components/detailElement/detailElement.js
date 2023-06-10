@@ -134,10 +134,8 @@ class detailElement extends HTMLElement {
                 if (user != 'local') {
                     try {
                         await setCart(user.uid,this.array);
-                        console.log(this.array)
                         } catch (e) {
                         console.log(e);
-                        console.log(this.array);
                             }
                 } else if (user === 'local') {
                     window.location.assign('../../sign-in/index.html')
